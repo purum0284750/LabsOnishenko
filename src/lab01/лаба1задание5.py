@@ -1,0 +1,6 @@
+a = input("ФИО: ").strip()
+b = ' '.join(a.split())
+c = ''.join(word[0].upper() for word in b.split())
+d = len(b)
+print("Инициалы:",c)
+print("Длина (символов):",d)
