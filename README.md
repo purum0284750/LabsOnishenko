@@ -1,3 +1,115 @@
+# Лабораторная работа 2
+## Задание 1 пункт 1
+```python
+nums = [1,2,3,4]
+def min_max(nums):
+    a = []
+    if len(nums) > 0:
+        minn = a.append(min(nums))
+        maxx = a.append(max(nums))
+        print(tuple(a))
+    else:
+        raise ValueError
+min_max(nums)
+```
+![](images/lab02/задание1пункт1.png "задание1пункт1")
+
+## Задание 1 пункт 2
+```python
+nums = [3,1,2,1,3]
+def unique_sorted(nums):
+    new_nums = sorted(set(nums))
+    print(new_nums)
+unique_sorted(nums)
+
+```
+![](images/lab02/задание1пункт2.png "задание1пункт2")
+
+## Задание 1 пункт 3
+```python
+mat = [[1, 2], [3, 4]]
+def flatten(mat):
+    new_mat = []
+    for num in mat:
+        if type(num) == tuple or type(num) == list:
+            for i in range(len(num)):
+                if num[i] != '':
+                    new_mat.append(num[i])
+        else:
+            raise ValueError
+    print(new_mat)
+flatten(mat)
+```
+![](images/lab02/задание1пункт3.png "задание1пункт3")
+
+## Задание B пункт 1
+```python
+mat= [[1, 2], [3, 4]]
+
+def check_rvanost(mat):
+    dlina = len(mat[-1])
+    for x in mat:
+        if len(x) != dlina:
+            raise ValueError
+        else:
+            return True
+def transpose(mat):
+    if check_rvanost:
+        new_mat = []
+        for stolbec in range(len(mat[-1])):
+            new_row = []
+            for row in range(len(mat)):
+                new_row.append(mat[row][stolbec])
+            new_mat.append(new_row)
+    print(new_mat)
+transpose(mat)
+```
+![](images/lab02/заданиеBпункт1.png "заданиеBпункт1")
+
+## Задание B пункт 2
+```python
+mat = [[1, 2], [3, 4]]
+def check_rvanost(mat):
+    for i in range(len(mat)):
+        if len(mat[i]) == len(mat[i+1]):
+            return True
+        else:
+            return False
+def row_sums(mat):
+    new_mat = []
+    for x in mat:
+        if type(x) == list and check_rvanost(mat):
+            summa = 0
+            for i in range(len(x)):
+                summa += x[i]
+            new_mat.append(summa)
+        else:
+            raise ValueError
+    print(new_mat)
+row_sums(mat)
+```
+![](images/lab02/заданиеBпункт2.png "заданиеBпункт2")
+
+## Задание B пункт 3
+```python
+mat = [[1, 2, 3], [4, 5, 6]]
+def col_sums(mat):
+    result = []
+    max_length_row = max([len(row) for row in mat])
+
+    try:
+        for i in range(max_length_row):
+            count = 0
+            for row in mat:
+                count += row[i]
+            result.append(count)
+    except:
+        raise ValueError("рваная")
+    return result
+print(col_sums(mat))
+```
+![](images/lab02/заданиеBпункт3.png "заданиеBпункт3")
+
 # Лабораторная работа 1
 ## №1
 ```python
