@@ -1,5 +1,4 @@
 rec = ("сидорова  анна сергеевна", "ABB-01", 3.999)
-
 def fio(res):
     part = rec[0].split()
     if not part:
