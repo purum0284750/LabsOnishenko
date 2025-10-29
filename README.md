@@ -18,19 +18,19 @@ print(text1)
 ```
 ## Тест 1
 
-![](images/lab03/3A111.png "")
+![](images/lab03/3A11.png "")
 
 ## Тест 2
 
-![](/images/lab03/3A112.png '')
+![](/images/lab03/3A12.png '')
 
 ## Тест 3
 
-![](images/lab03/лаба3заданиеAтест1функции13.png"")
+![](/images/lab03/3A13.png '')
 
 ## Тест 4
 
-![](images/lab03/лаба3заданиеАтест1функции14.png"")
+![](/images/lab03/3A14.png '')
 
 ## Задание А функция 2
 ```python
@@ -43,16 +43,16 @@ print(text2)
 ```
 ## Тест 1
 
-![](images/lab03/лаба3заданиеАтест2функции21.png"")
+![](/images/lab03/3A21.png '')
 ## Тест 2
 
-![](images/lab03/3A112.png"")
+![](/images/lab03/3A22.png '')
 ## Тест 3
 
-![](images/lab03/лаба3заданиеАтест2функции23.png"")
+![](/images/lab03/3A23.png '')
 ## Тест 4
 
-![](images/lab03/лаба3заданиеАтест2функции24.png"")
+![](/images/lab03/3A24.png '')
 ## Тест 5
 
 ![](images/lab03/лаба3заданиеАтест2функции25.png"")
