@@ -1,4 +1,165 @@
-# Лабораторная работа 2
+# Лабораторная работа 3
+## Задание А функция 1
+```python
+import re
+text = '  двойные   пробелы  '
+def normalize(text: str, *, casefold: bool = True, yo2e: bool = True) -> str:
+    if casefold:
+        text = text.casefold()
+    if yo2e:
+        text = text.replace("ё","е").replace("Ё","Е")
+    text = text.replace("\r"," ").replace("\t"," ")
+    text = text.strip()
+    text = text.split()
+    text = " ".join(text)
+    return text
+text1 = normalize(text)
+print(text1)
+```
+## Тест 1
+
+![](images/lab03/лаба3заданиеАтест1функции11.png"")
+
+## Тест 2
+
+![](images/lab03/лаба3заданиеАтест1функции12.png"")
+
+## Тест 3
+
+![](images/lab03/лаба3заданиеАтест1функции13.png"")
+
+## Тест 4
+
+![](images/lab03/лаба3заданиеАтест1функции14.png"")
+
+## Задание А функция 2
+```python
+import re
+text1="emoji 😀 не слово"
+def tokenize(text: str) -> list[str]:
+    return re.findall("[\w-]+", text)
+text2 = tokenize(text1)
+print(text2)
+```
+## Тест 1
+
+![](images/lab03/лаба3заданиеАтест2функции21.png"")
+## Тест 2
+
+![](images/lab03/лаба3заданиеАтест2функции22.png"")
+## Тест 3
+
+![](images/lab03/лаба3заданиеАтест2функции23.png"")
+## Тест 4
+
+![](images/lab03/лаба3заданиеАтест2функции24.png"")
+## Тест 5
+
+![](images/lab03/лаба3заданиеАтест2функции25.png"")
+
+## Задание
+```python
+
+
+```
+
+
+
+
+
+
+
+
+
+## Задание В
+```python
+import sys
+from text import normalize, tokenize, count_freq, top_n
+import re
+a = sys.stdin.read().strip()
+norm = normalize(a)
+token = tokenize(norm)
+print("Всего слов:", len(token))
+count = count_freq(token)
+print("Уникальных слов:", len(count))
+top = top_n(count)
+print("Топ-5:")
+
+for element in top:
+    print(element[0], ":", element[1])
+
+
+```
+![](images/lab02/задание1пункт2.png "задание1пункт2")
+
+## Задание 1 пункт 3
+```python
+mat = [[1, 2], [3, 4]]
+def flatten(mat):
+    new_mat = []
+    for num in mat:
+        if type(num) == tuple or type(num) == list:
+            for i in range(len(num)):
+                if num[i] != '':
+                    new_mat.append(num[i])
+        else:
+            raise ValueError
+    print(new_mat)
+flatten(mat)
+```
+![](images/lab02/задание1пункт3.png "задание1пункт3")
+
+## Задание B пункт 1
+```python
+mat= [[1, 2], [3, 4]]
+
+def check_rvanost(mat):
+    dlina = len(mat[-1])
+    for x in mat:
+        if len(x) != dlina:
+            raise ValueError
+        else:
+            return True
+def transpose(mat):
+    if check_rvanost:
+        new_mat = []
+        for stolbec in range(len(mat[-1])):
+            new_row = []
+            for row in range(len(mat)):
+                new_row.append(mat[row][stolbec])
+            new_mat.append(new_row)
+    print(new_mat)
+transpose(mat)
+```
+![](images/lab02/заданиеBпункт1.png "заданиеBпункт1")
+
+## Задание B пункт 2
+```python
+mat = [[1, 2], [3, 4]]
+def check_rvanost(mat):
+    for i in range(len(mat)):
+        if len(mat[i]) == len(mat[i+1]):
+            return True
+        else:
+            return False
+def row_sums(mat):
+    new_mat = []
+    for x in mat:
+        if type(x) == list and check_rvanost(mat):
+            summa = 0
+            for i in range(len(x)):
+                summa += x[i]
+            new_mat.append(summa)
+        else:
+            raise ValueError
+    print(new_mat)
+row_sums(mat)
+```
+![](images/lab02/заданиеBпункт2.png "заданиеBпункт2")
+
+## Задание B пункт 3
+```python
+mat = [[1, 2, 3], [4, 5, 6]]# Лабораторная работа 2
 ## Задание 1 пункт 1
 ```python
 nums = [1,2,3,4]

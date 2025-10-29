@@ -1,5 +1,7 @@
 import sys
-from text import normalize, tokenize, count_freq, top_n
+sys.path.append(r'C:\Users\Lucia\PycharmProjects\LabsOnishenko\src')
+
+from lib.text import normalize, tokenize, count_freq, top_n
 import re
 a = sys.stdin.read().strip()
 norm = normalize(a)
