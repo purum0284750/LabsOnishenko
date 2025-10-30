@@ -26,3 +26,4 @@ def top_n(freq: dict[str, int], n: int = 5) -> list[tuple[str, int]]:
 
 text4 = top_n(text3)
 print(text4)
+print(input())

@@ -1,8 +1,16 @@
 import sys
+import io
+
+# Принудительная настройка кодировки для Windows PowerShell для Кириллицы
+if sys.platform == "win32":
+    sys.stdin = io.TextIOWrapper(sys.stdin.buffer, encoding='utf-8')
+
+import sys
 sys.path.append(r'C:\Users\Lucia\PycharmProjects\LabsOnishenko\src')
 
 from lib.text import normalize, tokenize, count_freq, top_n
 import re
+
 a = sys.stdin.read().strip()
 norm = normalize(a)
 token = tokenize(norm)
@@ -12,5 +20,5 @@ print("Уникальных слов:", len(count))
 top = top_n(count)
 print("Топ-5:")
 
-for element in top:
+for element in top[:5]:
     print(element[0], ":", element[1])

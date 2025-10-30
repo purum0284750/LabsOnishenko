@@ -16,19 +16,13 @@ def normalize(text: str, *, casefold: bool = True, yo2e: bool = True) -> str:
 text1 = normalize(text)
 print(text1)
 ```
-## Тест 1
+## Тест-кейсы к 1 функции
 
 ![](images/lab03/3A11.png "")
 
-## Тест 2
-
 ![](/images/lab03/3A12.png '')
 
-## Тест 3
-
 ![](/images/lab03/3A13.png '')
-
-## Тест 4
 
 ![](/images/lab03/3A14.png '')
 
@@ -41,41 +35,70 @@ def tokenize(text: str) -> list[str]:
 text2 = tokenize(text1)
 print(text2)
 ```
-## Тест 1
+## Тест-кейсы ко 2 функции
 
 ![](/images/lab03/3A21.png '')
-## Тест 2
 
 ![](/images/lab03/3A22.png '')
-## Тест 3
 
 ![](/images/lab03/3A23.png '')
-## Тест 4
 
 ![](/images/lab03/3A24.png '')
-## Тест 5
 
-![](images/lab03/лаба3заданиеАтест2функции25.png"")
+![](/images/lab03/3A25.png '')
 
-## Задание
+## Задание A функции 3-4
 ```python
+text2 = ["bb","aa","bb","aa","cc"]
 
+
+def count_freq(tokens: list[str]) -> dict[str, int]:
+    result = {}
+    for token in tokens:
+        result[token] = result.get(token, 0) + 1
+    return result
+
+
+text3 = count_freq(text2)
+
+
+def top_n(freq: dict[str, int], n: int = 5) -> list[tuple[str, int]]:
+    result = []
+    for key in freq:
+        value = freq[key]
+        element = (key, value)
+        result.append(element)
+
+
+    result = sorted(result, key=lambda p: p[0])[:n]
+
+    return result
+
+
+text4 = top_n(text3)
+print(text4)
+print(input())
 
 ```
-
-
-
-
-
-
-
-
+## Тест-кейсы к функциям 3-4
+![](/images/lab03/3A341.png '')
+![](/images/lab03/3A342.png '')
 
 ## Задание В
 ```python
 import sys
-from text import normalize, tokenize, count_freq, top_n
+import io
+
+# Принудительная настройка кодировки для Windows PowerShell для Кириллицы
+if sys.platform == "win32":
+    sys.stdin = io.TextIOWrapper(sys.stdin.buffer, encoding='utf-8')
+
+import sys
+sys.path.append(r'C:\Users\Lucia\PycharmProjects\LabsOnishenko\src')
+
+from lib.text import normalize, tokenize, count_freq, top_n
 import re
+
 a = sys.stdin.read().strip()
 norm = normalize(a)
 token = tokenize(norm)
@@ -85,11 +108,12 @@ print("Уникальных слов:", len(count))
 top = top_n(count)
 print("Топ-5:")
 
-for element in top:
+for element in top[:5]:  
     print(element[0], ":", element[1])
-
-
 ```
+![](/images/lab03/3B.png '')
+
+# Лабораторная работа 2
 ![](images/lab02/задание1пункт2.png "задание1пункт2")
 
 ## Задание 1 пункт 3
