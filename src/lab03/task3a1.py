@@ -1,4 +1,3 @@
-import re
 text = '  Двойные   пробелы  '
 def normalize(text: str, *, casefold: bool = True, yo2e: bool = True) -> str:
     if casefold:
